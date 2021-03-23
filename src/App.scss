@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("../public/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("../public/fonts/Roboto-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("../public/fonts/Roboto-Bold.ttf");
+}
+
+.todo {
+  background-color: #ffffff;
+  border-radius: 10px;
+  max-width: 900px;
+  width: 100%;
+  margin: 100px auto 0 auto;
+  padding: 40px;
+
+  &__title {
+    font-size: 42px;
+    line-height: 46px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    max-width: 530px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 12px 5px;
+    border: 2px solid rgba(44, 62, 80, 1);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 18px;
+
+    &::placeholder {
+      font-size: 18px;
+    }
+
+    &:focus {
+      border: 2px solid rgba(52, 152, 219, 1);
+    }
+  }
+
+  &__tasks {
+    max-width: 530px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .tasks {
+    &__title {
+      font-size: 36px;
+      line-height: 40px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0;
+    }
+
+    &__items {
+      padding: 0;
+    }
+
+    &__item {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item.done {
+      span {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .item {
+    &__text {
+      padding: 0 16px;
+      font-size: 20px;
+      line-height: 24px;
+      color: #000000;
+    }
+
+    &__button {
+      padding: 8px 24px;
+      background-color: rgba(240, 52, 52, 1);
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: 0.3s;
+      color: #fff;
+
+      &:hover {
+        background-color: darken(rgba(240, 52, 52, 1), 10%);
+      }
+    }
+  }
+}
