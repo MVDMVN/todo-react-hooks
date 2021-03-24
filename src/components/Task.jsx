@@ -22,13 +22,12 @@ const Task = (props) => {
             value={props.item.text}
             onBlur={props.onEditTask}
             onEnter={props.onEditTask}
+            autoFocus
           />
         ) : (
           <span
             className="item__text"
-            onDoubleClick={props.onEditToggle(
-              props.item.id,
-            )}>
+            onDoubleClick={() => props.onEditToggle(props.item.id)}>
             {props.item.text}
           </span>
         )}
@@ -36,7 +35,7 @@ const Task = (props) => {
       <button
         className="item__button"
         onClick={() => {
-          props.onDeleteTask(this.props.item.id);
+          props.onDeleteTask(props.item.id)
         }}>
         Delete
       </button>

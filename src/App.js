@@ -34,7 +34,7 @@ function App() {
   const onCompleteTask = (id) => {
     todoItems.forEach((item) => {
       if (item.id === id) {
-        item.completed = !item.completed;
+        item.isDone = !item.isDone;
       }
     });
     setTodoItems([...todoItems]);
@@ -45,9 +45,10 @@ function App() {
   };
 
   const onEditToggle = (id) => {
+
     todoItems.forEach((item) => {
       if (item.id === id) {
-        item.edit = !item.edit;
+        item.isEditable = !item.isEditable;
         setItemTodoText(item.text);
       }
     });
@@ -55,14 +56,11 @@ function App() {
   };
 
   const onEditTask = (id) => (text) => {
+    console.log("OnEditTask")
     todoItems.forEach((item) => {
       if (item.id === id) {
-        if (text.trim() !== "") {
-          item.text = text;
-          item.edit = !item.edit;
-        } else {
-          item.edit = !item.edit;
-        }
+        item.text = text;
+        item.isEditable = !item.isEditable;
       }
     });
     setTodoItems([...todoItems]);
